@@ -21,15 +21,35 @@ class ProductController extends Controller
         $this->productRepository = $productRepository;
     }
 
-
     /**
-     * Display a listing of the resource.
+     * @OA\Get(
+     *     path="/api/products",
+     *     tags={"products"},
+     *     summary="Get All Products",
+     *     description="Get All Products",
+     *     operationId="index",
+     *     @OA\Parameter(
+     *         name="perPage",
+     *         in="query",
+     *         description="PerPage Product",
+     *         required=true,
+     *         explode=true,
+     *         @OA\Schema(
+     *             default=10,
+     *             type="integer",
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=400,
+     *         description="Invalid status value"
+     *     ),
+     * )
      */
     public function index(): JsonResponse
     {
         try {
             /** @var \Illuminate\Contracts\Pagination\Paginator $products  */
-            $products = $this->productRepository->allProduct(5); // Paginator instance
+            $products = $this->productRepository->allProduct(10); // Paginator instance
             $data = $products->items(); // Retrieve items as array
             return $this->successResponse($data, 200, 'Product Fetch Successfully');
         } catch (Exception $e) {
