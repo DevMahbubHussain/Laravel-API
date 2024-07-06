@@ -13,7 +13,7 @@ class ProductRepository implements CrudContract
      *
      * @return array
      */
-    public function allProduct(int $perPage = 10): Paginator
+    public function allProduct(?int $perPage = 10): Paginator
     {
         return Product::paginate($perPage);
     }

@@ -24,8 +24,8 @@ class ProductController extends Controller
     /**
      * @OA\Get(
      *     path="/api/products",
-     *     tags={"products"},
-     *     summary="Get All Products",
+     *     tags={"Products"},
+     *     summary="Get All Products From Laravel Backend",
      *     description="Get All Products",
      *     operationId="index",
      *     @OA\Parameter(

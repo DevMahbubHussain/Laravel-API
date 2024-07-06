@@ -12,9 +12,9 @@
         "/api/products": {
             "get": {
                 "tags": [
-                    "products"
+                    "Products"
                 ],
-                "summary": "Get All Products",
+                "summary": "Get All Products From Laravel Backend",
                 "description": "Get All Products",
                 "operationId": "index",
                 "parameters": [
@@ -40,8 +40,8 @@
     },
     "tags": [
         {
-            "name": "products",
-            "description": "products"
+            "name": "Products",
+            "description": "Products"
         }
     ]
 }

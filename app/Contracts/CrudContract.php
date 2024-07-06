@@ -7,5 +7,5 @@ use Illuminate\Contracts\Pagination\Paginator;
 interface CrudContract
 {
 
-    public function allProduct(int $perPage): Paginator;
+    public function allProduct(?int $perPage): Paginator;
 }
