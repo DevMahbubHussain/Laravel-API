@@ -31,5 +31,6 @@ Route::middleware('auth:api')->group(function () {
     Route::get('/profile', [ProfileController::class, 'show']);
     Route::put('/profile', [ProfileController::class, 'update']);
     Route::post('/logout', [LogoutController::class, 'logout']);
-    Route::get('/products', [ProductController::class, 'index']);
+    Route::apiResource('/products', ProductController::class);
+    // Route::get('/products', [ProductController::class, 'index']);
 });
